@@ -11,11 +11,11 @@ let computerSelectin = computerPlay();
 const playRound = (playerSelection,computerSelection) => {  
   let compare = (`${playerSelection} vs ${computerSelection}`);
   
-  if (playerSelection.toLowerCase() === computerSelection) {
+  if (playerSelection.trim().toLowerCase() === computerSelection) {
     alert(`${compare} is a tie`);
     return;
   }
-  if (playerSelection.toLowerCase() === "rock") {
+  if (playerSelection.trim().toLowerCase() === "rock") {
       if (computerSelection === "scissors") {
         alert(`You win! ${playerSelection} beats ${computerSelection}`);
         playerScore++;
@@ -24,7 +24,7 @@ const playRound = (playerSelection,computerSelection) => {
         computerScore++;
        }
   }
-  if (playerSelection.toLowerCase() === "scissors") {
+  if (playerSelection.trim().toLowerCase() === "scissors") {
     if (computerSelection === "paper") {
       alert(`You win! ${playerSelection} beats ${computerSelection}`);
       playerScore++;
@@ -33,7 +33,7 @@ const playRound = (playerSelection,computerSelection) => {
       computerScore++;
     }
   }   
-  if (playerSelection.toLowerCase() === "paper") {
+  if (playerSelection.trim().toLowerCase() === "paper") {
     if (computerSelection === "rock") {
       alert(`You win! ${playerSelection} beats ${computerSelection}`);
       playerScore++;
