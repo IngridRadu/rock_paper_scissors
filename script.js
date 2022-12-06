@@ -6,18 +6,23 @@ const computerPlay = () => {
   return options[randomNumber];
 }
 const playerPlay = () => {
-  let userInput = prompt("Enter a choice: rock, paper, scissors").trim().toLowerCase();
-  if (userInput !== "rock" && userInput !== "paper" && userInput !=="scissors") 
+  let userInput = prompt("Enter a choice: rock, paper, scissors");
+  if (userInput === null ) {
+    if (confirm("Are your quitting the game?")) {
+      console.log("Game over");
+    }
+  }
+  if (userInput.trim().toLowerCase() !== "rock" && userInput.trim().toLowerCase() !== "paper" && userInput.trim().toLowerCase() !=="scissors") 
       {
       alert("Input invalid! Please choose rock, paper or scissors");      
       return playerPlay();
      } 
-     return userInput;
+     return userInput.trim().toLowerCase();
 }
 
 const playRound = (playerSelection,computerSelection) => {  
   let compare = (`${playerSelection} vs ${computerSelection}`);
-  
+
   if (playerSelection === computerSelection) {
     alert(`${compare} is a tie`);
     return;
